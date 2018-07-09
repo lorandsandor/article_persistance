@@ -25,3 +25,4 @@ Run 'bundle exec rspec spec/'
 * Sanitize has before displaying
 * Prettify the article display format
 * If more fields need persisted, switch update method from the controller to do `update_attributes`
+* Hook up continuous integration (CircleCI preferred)
