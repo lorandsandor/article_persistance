@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module External
   module V1
     class ArticleList
@@ -6,8 +8,8 @@ module External
       def initialize
         # Get base uri or default
         @base_uri = ENV.fetch(
-            'ARTICLES_LIST_URI',
-            'https://s3-eu-west-1.amazonaws.com/olio-staging-images/developer'
+          'ARTICLES_LIST_URI',
+          'https://s3-eu-west-1.amazonaws.com/olio-staging-images/developer'
         )
       end
 

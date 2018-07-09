@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class ArticlesController < ApplicationController
   def index
     @persisted = Article.all
@@ -17,7 +19,7 @@ class ArticlesController < ApplicationController
   # Loads existing article or create new one (persistance)
   def load_article
     article = Article.find_by_id(article_params[:id])
-    article ? article : Article.new(id: article_params[:id])
+    article || Article.new(id: article_params[:id])
   end
 
   # return the external article array
