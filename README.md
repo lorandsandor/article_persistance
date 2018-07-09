@@ -1,24 +1,27 @@
-# README
+# article_persistance
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Proof of concept rails application that persists data from an external json list by saving what is needed in the database
 
-Things you may want to cover:
+## Dependecies
+* Ruby v2.3.0 or grater
+* Rails v5.2.0 or grater
+* MySQL v5.7.x
 
-* Ruby version
+## Setup
+* Clone the repository locally with `git clone git@github.com:lorandsandor/article_persistance.git`
+* Run `bundle install`
+* Run `bundle exec rake db:create db:migrate`
 
-* System dependencies
+## Running the app
 
-* Configuration
+Run `bundle exec rails s` and navigate to `localhost:3000` in a browser.
 
-* Database creation
+## Running Specs
 
-* Database initialization
+Run 'bundle exec rspec spec/'
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+### TO DO:
+* Beef up coverage
+* Sanitize has before displaying
+* Prettify the article display format
+* If more fields need persisted, switch update method from the controller to do `update_attributes`

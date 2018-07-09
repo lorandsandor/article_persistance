@@ -1,0 +1,12 @@
+<% @articles.each do |article| %>
+    <p>
+      <% art = @persisted.detect { |a| a.id == article['id'] }%>
+      <% article['reactions']['likes'] = art.likes if art %>
+
+      <p><b>Article:</b><%= article['id'] %> </p>
+      <p>Likes: <%= article['reactions']['likes'] %></p>
+      <p><%= article.inspect %></p>
+
+      <b><%= link_to 'Like', article_path(article['id']), method: :put %></b>
+    </p>
+<% end %>
