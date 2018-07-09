@@ -19,6 +19,10 @@ class ArticlesController < ApplicationController
   end
 
   def article_list
-    []
+    article_list_getter.get_articles
+  end
+
+  def article_list_getter
+    @article_list_getter ||= External::V1::ArticleList.new
   end
 end
