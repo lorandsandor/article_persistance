@@ -2,11 +2,18 @@ require 'rails_helper'
 
 RSpec.describe ArticlesController, type: :controller do
   let(:article) { Article.new(id: 1, likes: 0) }
+  let(:list) { [{id: 1, sutff: 'more_stuff' }] }
+  let(:article_list) { double('article_list', get_articles: list ) }
+
+
+  before do
+    allow(External::V1::ArticleList).to receive(:new).and_return article_list
+  end
 
   describe 'index' do
     it 'sets the article list' do
       get :index
-      expect(subject.instance_variable_get(:@articles)).to eq []
+      expect(subject.instance_variable_get(:@articles)).to eq list
     end
   end
 
