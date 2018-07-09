@@ -29,7 +29,7 @@ module External
       end
 
       def to_hash(payload)
-        JSON.parse(payload).with_indifferent_access
+        JSON.parse(payload)
       end
     end
   end
